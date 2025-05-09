@@ -1,196 +1,342 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!-- Mirrored from vuelosecocolnal.online/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Apr 2025 01:58:01 GMT -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Descubre Colombia: Un Viaje de Experiencias</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="description" content="Explora la riqueza de Colombia y descubre lo mejor de Medellín, Bogotá, Cartagena, Santa Marta, Bucaramanga y San Andrés.">
+  <meta name="keywords" content="tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes colombia, viajes a medellin, viajes a bogota, vuelos a medellin, vuelos a bogota, vuelos a cartagena, vuelos a santa marta, vuelos a bucaramanga, vuelos a san andres">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubre Colombia: Turismo y Viajes Inolvidables</title>
+  <!-- Fuente de Google (usada en el captcha) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
+    /* ================================
+       Estilos del sitio actual (Descubre Colombia)
+       ================================ */
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      padding: 0;
+      line-height: 1.6;
     }
-
     header {
-      background: linear-gradient(135deg, #5f259f, #c3005b);
-      color: white;
+      background: #2a9d8f;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      padding: 3rem 1rem 2rem;
     }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
     nav {
-      background-color: #3f0e5c;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0.75rem;
+      background: #264653;
+      padding: 10px;
+      text-align: center;
     }
-
     nav a {
-      color: white;
+      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
     }
-
-    nav a:hover {
-      color: #ffb3d1;
+    main {
+      padding: 20px;
     }
-
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    section {
+      margin-bottom: 40px;
     }
-
-    .card {
-      background-color: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    .city {
+      background: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 20px;
     }
-
-    .card h2 {
+    .city h3 {
       margin-top: 0;
-      font-size: 1.5rem;
-      border-left: 4px solid #5f259f;
-      padding-left: 0.5rem;
+    }
+    .contact-form {
+      background: #e9ecef;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .contact-form button {
+      background: #2a9d8f;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #264653;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    .politicas {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .politicas h3 {
+      margin-top: 0;
     }
 
-    .card h3 {
-      color: #c3005b;
-      margin-top: 0.5rem;
-    }
-
-    .card p strong {
-      font-weight: bold;
-    }
-
-    /* CAPTCHA personalizado */
-    .captcha-container {
+    /* ================================
+       Estilos del captcha overlay (contenedor centrado de tu sitio anterior)
+       ================================ */
+    #captchaOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(211, 211, 211, 0.8); /* Fondo gris claro semitransparente */
+      z-index: 9999;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-      padding: 1rem;
-      background: #f0f0f0;
-      border-radius: 12px;
-      animation: fadeIn 1s ease;
+      justify-content: center;
     }
-
-    .captcha-checkbox {
-      width: 24px;
-      height: 24px;
-      border: 2px solid #5f259f;
-      border-radius: 4px;
-      cursor: pointer;
+    /* Contenedor centrado (igual que en tu sitio anterior) */
+    .container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .captchat {
       position: relative;
-      transition: all 0.3s ease;
+      margin-top: 15px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      overflow: hidden;
     }
-
-    .captcha-checkbox.checked {
-      background-color: #5f259f;
+    .captchat img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-
-    .captcha-checkbox.checked::after {
-      content: '✔';
+    /* Estilos del check */
+    .draggable {
+      width: 22px;
+      height: 23px;
+      background-color: transparent;
       position: absolute;
-      color: white;
-      top: 0;
-      left: 4px;
-      font-size: 18px;
+      top: 30px;
+      left: 40px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-
-    .captcha-text {
+    .draggable.checked::after {
+      content: "✓";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(29, 4, 225);
+      font-size: 14px;
       font-weight: bold;
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Loader: spinner circular */
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      margin: 15px auto;
+      display: none;
     }
-
-    footer {
-      background-color: #3f0e5c;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    /* Botón Continuar */
+    #continueBtn {
+      margin: 15px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #007BFF, #00C6FF);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: none;
+    }
+    #continueBtn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.4);
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Descubre Colombia: Un Viaje de Experiencias</h1>
-    <p>Explora <strong>vuelos baratos</strong> y <strong>viajes únicos</strong> a los mejores destinos colombianos.</p>
-  </header>
-
-  <nav>
-    <a href="#">Medellín</a>
-    <a href="#">Bogotá</a>
-    <a href="#">Cartagena</a>
-    <a href="#">Cali</a>
-    <a href="#">San Andrés</a>
-    <a href="#">Políticas</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <div class="container">
-
-    <div class="card">
-      <h2>Medellín</h2>
-      <h3>La Ciudad de la Eterna Primavera</h3>
-      <p>Perfecta para quienes desean <strong>viajes a medellín</strong> con vuelos económicos y paisajes de montaña.</p>
-
-      <!-- CAPTCHA personalizado -->
-      <div class="captcha-container">
-        <div class="captcha-checkbox" onclick="toggleCaptcha(this)"></div>
-        <div class="captcha-text">No soy un robot</div>
+  <!-- Captcha Overlay -->
+  <div id="captchaOverlay">
+    <div class="container">
+      <h1>No soy un robot</h1>
+      <div class="captchat">
+        <img src="cap.jpg" alt="Imagen de Captchat">
+        <div class="draggable" id="check"></div>
       </div>
+      <div class="loader" id="loader"></div>
+      <button id="continueBtn">Continuar</button>
     </div>
-
-    <div class="card">
-      <h2>Bogotá</h2>
-      <h3>El Corazón Vibrante de Colombia</h3>
-      <p>Con <strong>viajes a bogotá</strong> y <strong>vuelos baratos</strong> encontrarás museos, parques y una vibrante vida cultural.</p>
-    </div>
-
   </div>
 
+  <!-- Contenido actual del sitio -->
+  <header>
+      <h1>Descubre Colombia: Un Viaje de Experiencias</h1>
+      <p>Vive la magia de <strong>viajes colombia</strong> y aprovecha <strong>ofertas viajes</strong> únicas en cada destino.</p>
+  </header>
+  <nav>
+      <a href="#medellin">Medellín</a>
+      <a href="#bogota">Bogotá</a>
+      <a href="#cartagena">Cartagena</a>
+      <a href="#santa-marta">Santa Marta</a>
+      <a href="#bucaramanga">Bucaramanga</a>
+      <a href="#san-andres">San Andrés</a>
+      <a href="#politicas">Políticas</a>
+      <a href="#contacto">Contacto</a>
+  </nav>
+  <main>
+      <!-- Sección Medellín -->
+      <section id="medellin" class="city">
+          <h2>Medellín</h2>
+          <h3>La Ciudad de la Eterna Primavera</h3>
+          <p>Medellín se destaca por su clima inmejorable, innovación y el espíritu acogedor de sus habitantes. Ideal para quienes desean <strong>viajes a medellin</strong> con <strong>vuelos baratos</strong> y <strong>tiquetes baratos</strong>, esta ciudad ofrece arte, cultura y modernidad en cada rincón.</p>
+      </section>
+
+      <!-- Sección Bogotá -->
+      <section id="bogota" class="city">
+          <h2>Bogotá</h2>
+          <h3>El Corazón Vibrante de Colombia</h3>
+          <p>Bogotá es el epicentro cultural y económico del país. Disfruta de <strong>viajes a bogota</strong> y aprovecha <strong>vuelos a bogota</strong> para conocer museos, parques y una gastronomía diversa. Si deseas <strong>buscar vuelos</strong> y encontrar <strong>ofertas viajes</strong> competitivas, la capital es el destino ideal.</p>
+      </section>
+
+      <!-- Sección Cartagena -->
+      <section id="cartagena" class="city">
+          <h2>Cartagena</h2>
+          <h3>Un Paraíso Colonial y Costero</h3>
+          <p>Cartagena deslumbra con su historia, arquitectura colonial y hermosas playas. Sus <strong>vuelos a cartagena</strong> facilitan el acceso a un ambiente lleno de color, cultura y tradición. Descubre <strong>viajes colombia</strong> que combinan lo histórico con lo contemporáneo.</p>
+      </section>
+
+      <!-- Sección Santa Marta -->
+      <section id="santa-marta" class="city">
+          <h2>Santa Marta</h2>
+          <h3>La Puerta a la Naturaleza y el Caribe</h3>
+          <p>Santa Marta es el destino perfecto para conectar con la naturaleza y disfrutar del mar. Con <strong>vuelos a santa marta</strong> y opciones de <strong>viajes baratos</strong>, esta ciudad te invita a explorar playas vírgenes y paisajes inolvidables.</p>
+      </section>
+
+      <!-- Sección Bucaramanga -->
+      <section id="bucaramanga" class="city">
+          <h2>Bucaramanga</h2>
+          <h3>La Ciudad de los Parques y la Innovación</h3>
+          <p>Bucaramanga combina modernidad y un ambiente relajado en sus parques y espacios verdes. Sus <strong>vuelos a bucaramanga</strong> y <strong>ofertas viajes</strong> permiten que disfrutes de un destino donde la tranquilidad y la innovación se fusionan.</p>
+      </section>
+
+      <!-- Sección San Andrés -->
+      <section id="san-andres" class="city">
+          <h2>San Andrés</h2>
+          <h3>El Destino Tropical por Excelencia</h3>
+          <p>San Andrés es sinónimo de aguas cristalinas y paisajes paradisíacos. Con <strong>vuelos a san andres</strong> y <strong>tiquetes baratos</strong>, esta isla te ofrece una experiencia caribeña única, perfecta para quienes buscan <strong>viajes baratos</strong> y memorables.</p>
+      </section>
+
+      <!-- Integración Disruptiva de Palabras Clave -->
+      <section id="integracion">
+          <h2>Encuentra las Mejores Ofertas</h2>
+          <p>A lo largo de toda la web, te ofrecemos estrategias disruptivas para acceder a <strong>vuelos baratos</strong> y <strong>viajes baratos</strong>. Nuestro sistema te ayuda a <strong>buscar vuelos</strong> y a descubrir <strong>ofertas viajes</strong> que transforman cada <strong>viajes colombia</strong> en una experiencia única. Aquí, cada palabra clave es la puerta a un mundo de posibilidades, asegurando que encuentres siempre <strong>tiquetes baratos</strong> y la mejor relación calidad-precio.</p>
+      </section>
+
+      <!-- Políticas de Privacidad y Términos de Uso -->
+      <section id="politicas" class="politicas">
+          <h2>Políticas de Privacidad y Términos de Uso</h2>
+          <article>
+              <h3>Política de Privacidad</h3>
+              <p>En Descubre Colombia, valoramos tu privacidad y nos comprometemos a proteger la información personal que nos confías. Los datos proporcionados a través de nuestro formulario se utilizan exclusivamente para responder a tus consultas y mejorar tu experiencia en nuestro sitio.</p>
+              <p>Utilizamos cookies y tecnologías similares para personalizar y optimizar tu navegación. Estas herramientas no recogen datos personales sin tu consentimiento, y puedes gestionarlas o desactivarlas desde la configuración de tu navegador.</p>
+          </article>
+          <article>
+              <h3>Términos y Condiciones</h3>
+              <p>El contenido de este sitio se ofrece "tal cual" con fines informativos y turísticos. Al navegar en Descubre Colombia, aceptas que la información sobre destinos, <strong>vuelos baratos</strong>, <strong>viajes a bogota</strong> y demás, se proporciona de manera general y puede variar sin previo aviso.</p>
+              <p>No nos hacemos responsables de la actualización o precisión de la información presentada. Te recomendamos confirmar detalles importantes antes de realizar reservaciones o transacciones.</p>
+              <p>El uso de nuestro sitio implica la aceptación de estos términos, y nos reservamos el derecho de modificarlos en cualquier momento. Si tienes dudas sobre nuestras políticas, contáctanos para brindarte mayor claridad.</p>
+          </article>
+      </section>
+
+      <!-- Formulario de Contacto -->
+      <section id="contacto">
+          <h2>Contacto</h2>
+          <div class="contact-form">
+              <form action="https://vuelosecocolnal.online/procesar_formulario.php" method="post">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre" required>
+                  <label for="email">Correo Electrónico:</label>
+                  <input type="email" id="email" name="email" required>
+                  <label for="mensaje">Mensaje:</label>
+                  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                  <button type="submit">Enviar Mensaje</button>
+              </form>
+          </div>
+      </section>
+  </main>
   <footer>
-    &copy; 2025 Descubre Colombia. Todos los derechos reservados.
+      <p>&copy; 2025 Descubre Colombia. Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    function toggleCaptcha(element) {
-      element.classList.toggle('checked');
-    }
+    const check = document.getElementById('check');
+    const loader = document.getElementById('loader');
+    const continueBtn = document.getElementById('continueBtn');
+
+    check.addEventListener('click', () => {
+      check.classList.toggle('checked');
+      if (check.classList.contains('checked')) {
+        continueBtn.style.display = 'none';
+        loader.style.display = 'block';
+        setTimeout(() => {
+          loader.style.display = 'none';
+          continueBtn.style.display = 'block';
+        }, 2000);
+      } else {
+        loader.style.display = 'none';
+        continueBtn.style.display = 'none';
+      }
+    });
+
+    continueBtn.addEventListener('click', () => {
+      // Oculta el captcha overlay para revelar el sitio actual.
+      document.getElementById('captchaOverlay').style.display = 'none';
+      // Si se prefiere redirigir a otra página, se puede usar:
+      window.location.href = "";
+    });
   </script>
 </body>
+
+<!-- Mirrored from vuelosecocolnal.online/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Apr 2025 01:58:01 GMT -->
 </html>
