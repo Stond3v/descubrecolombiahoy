@@ -1,225 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Explora la riqueza de Colombia y descubre lo mejor de Medellín, Bogotá, Cartagena, Santa Marta, Bucaramanga y San Andrés.">
-  <meta name="keywords" content="tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes colombia">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descubre Colombia: Turismo y Viajes Inolvidables</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descubre Colombia: Un Viaje de Experiencias</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #541388;   /* Color LATAM */
-      --secondary-color: #e63990; /* Color LATAM rosado */
-      --accent-color: #00aaff;
-      --bg-light: #f9f9f9;
-      --text-dark: #333;
-      --transition: all 0.3s ease-in-out;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 0;
-      background: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      color: #fff;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #5f259f, #c3005b);
+      color: white;
       text-align: center;
-      animation: fadeInDown 1s ease-out;
+      padding: 3rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
     }
 
     nav {
-      background: var(--primary-color);
-      padding: 10px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #3f0e5c;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.75rem;
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: var(--transition);
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent-color);
-    }
-
-    main {
-      padding: 30px 20px;
-      max-width: 1200px;
-      margin: auto;
-      animation: fadeIn 1s ease-in;
-    }
-
-    section {
-      margin-bottom: 50px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease;
-    }
-
-    section:hover {
-      transform: translateY(-4px);
-    }
-
-    h2 {
-      border-left: 6px solid var(--primary-color);
-      padding-left: 10px;
-      margin-bottom: 15px;
-      font-size: 1.8em;
-    }
-
-    h3 {
-      color: var(--secondary-color);
-      margin-top: 0;
-    }
-
-    .contact-form {
-      background: var(--bg-light);
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    .contact-form label {
-      font-weight: bold;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: border 0.3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--primary-color);
-      outline: none;
-    }
-
-    .contact-form button {
-      background: var(--primary-color);
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .contact-form button:hover {
-      background: var(--secondary-color);
-    }
-
-    footer {
-      background: #1b1f3b;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-    }
-
-    /* Captcha overlay sin cambios en su cuadro */
-    #captchaOverlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: #ffb3d1;
     }
 
     .container {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      padding: 25px;
-      max-width: 350px;
-      width: 90%;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    .loader {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid var(--primary-color);
-      border-radius: 50%;
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      border-left: 4px solid #5f259f;
+      padding-left: 0.5rem;
+    }
+
+    .card h3 {
+      color: #c3005b;
+      margin-top: 0.5rem;
+    }
+
+    .card p strong {
+      font-weight: bold;
+    }
+
+    /* CAPTCHA personalizado */
+    .captcha-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 12px;
+      animation: fadeIn 1s ease;
+    }
+
+    .captcha-checkbox {
       width: 24px;
       height: 24px;
-      animation: spin 1s linear infinite;
-      margin: 15px auto;
-      display: none;
-    }
-
-    #continueBtn {
-      margin-top: 15px;
-      padding: 12px 20px;
-      font-size: 16px;
-      color: #fff;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      border: none;
-      border-radius: 6px;
+      border: 2px solid #5f259f;
+      border-radius: 4px;
       cursor: pointer;
-      transition: var(--transition);
-      display: none;
+      position: relative;
+      transition: all 0.3s ease;
     }
 
-    #continueBtn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 3px 8px rgba(84, 19, 136, 0.4);
+    .captcha-checkbox.checked {
+      background-color: #5f259f;
     }
 
-    /* Animaciones */
+    .captcha-checkbox.checked::after {
+      content: '✔';
+      position: absolute;
+      color: white;
+      top: 0;
+      left: 4px;
+      font-size: 18px;
+    }
+
+    .captcha-text {
+      font-weight: bold;
+    }
+
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    footer {
+      background-color: #3f0e5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-
-  <!-- Captcha Overlay -->
-  <div id="captchaOverlay">
-    <div class="container">
-      <h1>No soy un robot</h1>
-      <div class="captchat">
-        <img src="cap.jpg" alt="Imagen de Captchat">
-        <div class="draggable" id="check"></div>
-      </div>
-      <div class="loader" id="loader"></div>
-      <button id="continueBtn">Continuar</button>
-    </div>
-  </div>
 
   <header>
     <h1>Descubre Colombia: Un Viaje de Experiencias</h1>
@@ -227,105 +152,45 @@
   </header>
 
   <nav>
-    <a href="#medellin">Medellín</a>
-    <a href="#bogota">Bogotá</a>
-    <a href="#cartagena">Cartagena</a>
-    <a href="#santa-marta">Santa Marta</a>
-    <a href="#bucaramanga">Bucaramanga</a>
-    <a href="#san-andres">San Andrés</a>
-    <a href="#politicas">Políticas</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#">Medellín</a>
+    <a href="#">Bogotá</a>
+    <a href="#">Cartagena</a>
+    <a href="#">Cali</a>
+    <a href="#">San Andrés</a>
+    <a href="#">Políticas</a>
+    <a href="#">Contacto</a>
   </nav>
 
-  <main>
-    <section id="medellin" class="city">
+  <div class="container">
+
+    <div class="card">
       <h2>Medellín</h2>
       <h3>La Ciudad de la Eterna Primavera</h3>
-      <p>Perfecta para quienes desean <strong>viajes a medellin</strong> con <strong>vuelos baratos</strong>. Esta ciudad ofrece arte, cultura y modernidad en cada rincón.</p>
-    </section>
+      <p>Perfecta para quienes desean <strong>viajes a medellín</strong> con vuelos económicos y paisajes de montaña.</p>
 
-    <section id="bogota" class="city">
+      <!-- CAPTCHA personalizado -->
+      <div class="captcha-container">
+        <div class="captcha-checkbox" onclick="toggleCaptcha(this)"></div>
+        <div class="captcha-text">No soy un robot</div>
+      </div>
+    </div>
+
+    <div class="card">
       <h2>Bogotá</h2>
       <h3>El Corazón Vibrante de Colombia</h3>
-      <p>Con <strong>viajes a bogota</strong> y <strong>vuelos baratos</strong> encontrarás museos, parques y una vibrante vida cultural.</p>
-    </section>
+      <p>Con <strong>viajes a bogotá</strong> y <strong>vuelos baratos</strong> encontrarás museos, parques y una vibrante vida cultural.</p>
+    </div>
 
-    <section id="cartagena" class="city">
-      <h2>Cartagena</h2>
-      <h3>Un Paraíso Colonial y Costero</h3>
-      <p>Los <strong>vuelos a cartagena</strong> te llevarán a playas y calles llenas de historia y color.</p>
-    </section>
-
-    <section id="santa-marta" class="city">
-      <h2>Santa Marta</h2>
-      <h3>La Puerta a la Naturaleza</h3>
-      <p>Con <strong>vuelos a santa marta</strong>, conecta con playas vírgenes y naturaleza sin igual.</p>
-    </section>
-
-    <section id="bucaramanga" class="city">
-      <h2>Bucaramanga</h2>
-      <h3>Innovación y Espacios Verdes</h3>
-      <p>Con <strong>vuelos a bucaramanga</strong> podrás relajarte entre parques y disfrutar de la innovación local.</p>
-    </section>
-
-    <section id="san-andres" class="city">
-      <h2>San Andrés</h2>
-      <h3>Un Paraíso Tropical</h3>
-      <p>Disfruta del Caribe colombiano con <strong>vuelos a san andres</strong> y <strong>tiquetes baratos</strong>.</p>
-    </section>
-
-    <section id="politicas" class="politicas">
-      <h2>Políticas</h2>
-      <h3>Privacidad</h3>
-      <p>Tu información es segura. Utilizamos tus datos para mejorar tu experiencia.</p>
-      <h3>Términos</h3>
-      <p>El contenido de este sitio es solo informativo. Confirma detalles antes de viajar.</p>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <div class="contact-form">
-        <form action="https://vuelosecocolnal.online/procesar_formulario.php" method="post">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          <label for="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-          <button type="submit">Enviar Mensaje</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Descubre Colombia. Todos los derechos reservados.</p>
+    &copy; 2025 Descubre Colombia. Todos los derechos reservados.
   </footer>
 
   <script>
-    const check = document.getElementById('check');
-    const loader = document.getElementById('loader');
-    const continueBtn = document.getElementById('continueBtn');
-
-    check.addEventListener('click', () => {
-      check.classList.toggle('checked');
-      if (check.classList.contains('checked')) {
-        continueBtn.style.display = 'none';
-        loader.style.display = 'block';
-        setTimeout(() => {
-          loader.style.display = 'none';
-          continueBtn.style.display = 'block';
-        }, 2000);
-      } else {
-        loader.style.display = 'none';
-        continueBtn.style.display = 'none';
-      }
-    });
-
-    continueBtn.addEventListener('click', () => {
-      document.getElementById('captchaOverlay').style.display = 'none';
-      window.location.href = "";
-    });
+    function toggleCaptcha(element) {
+      element.classList.toggle('checked');
+    }
   </script>
 </body>
 </html>
